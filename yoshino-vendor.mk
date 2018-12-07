@@ -122,7 +122,12 @@ PRODUCT_COPY_FILES += \
     vendor/sony/yoshino/proprietary/etc/init/idds.rc:system/etc/init/idds.rc \
     vendor/sony/yoshino/proprietary/etc/init/taimport.rc:system/etc/init/taimport.rc \
     vendor/sony/yoshino/proprietary/etc/init/updatemiscta.rc:system/etc/init/updatemiscta.rc \
+    vendor/sony/yoshino/proprietary/etc/permissions/com.sonymobile.camera.addon.xml:system/etc/permissions/com.sonymobile.camera.addon.xml \
+    vendor/sony/yoshino/proprietary/etc/permissions/com.sonymobile.imageprocessor.xml:system/etc/permissions/com.sonymobile.imageprocessor.xml \
     vendor/sony/yoshino/proprietary/etc/permissions/com.sonymobile.miscta.xml:system/etc/permissions/com.sonymobile.miscta.xml \
+    vendor/sony/yoshino/proprietary/framework/com.qualcomm.qti.camera.jar:system/framework/com.qualcomm.qti.camera.jar \
+    vendor/sony/yoshino/proprietary/framework/com.sonymobile.camera.addon_impl.jar:system/framework/com.sonymobile.camera.addon_impl.jar \
+    vendor/sony/yoshino/proprietary/framework/com.sonymobile.imageprocessor.bypasscamera_impl.jar:system/framework/com.sonymobile.imageprocessor.bypasscamera_impl.jar \
     vendor/sony/yoshino/proprietary/framework/com.sonymobile.miscta_impl.jar:system/framework/com.sonymobile.miscta_impl.jar \
     vendor/sony/yoshino/proprietary/vendor/firmware/ufs/01AD-483238553734333031414D5220202020-D003.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/ufs/01AD-483238553734333031414D5220202020-D003.bin \
     vendor/sony/yoshino/proprietary/vendor/firmware/ufs/01CE-4B4C554347344A3145442D4230433120-0200.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/ufs/01CE-4B4C554347344A3145442D4230433120-0200.bin \
@@ -135,6 +140,7 @@ PRODUCT_COPY_FILES += \
     vendor/sony/yoshino/proprietary/lib/libcacao_process_ctrl_gateway.so:system/lib/libcacao_process_ctrl_gateway.so \
     vendor/sony/yoshino/proprietary/lib/libcacao_service.so:system/lib/libcacao_service.so \
     vendor/sony/yoshino/proprietary/lib/libidd-plat.so:system/lib/libidd-plat.so \
+    vendor/sony/yoshino/proprietary/lib/libimageprocessorjni.so:system/lib/libimageprocessorjni.so \
     vendor/sony/yoshino/proprietary/lib/vendor.semc.system.idd@1.0.so:system/lib/vendor.semc.system.idd@1.0.so \
     vendor/sony/yoshino/proprietary/lib/vendor.somc.hardware.camera.cacao@1.0.so:system/lib/vendor.somc.hardware.camera.cacao@1.0.so \
     vendor/sony/yoshino/proprietary/lib/vendor.somc.hardware.camera.cacao@2.0.so:system/lib/vendor.somc.hardware.camera.cacao@2.0.so \
@@ -152,12 +158,12 @@ PRODUCT_COPY_FILES += \
     vendor/sony/yoshino/proprietary/lib64/libcacao_pal.so:system/lib64/libcacao_pal.so \
     vendor/sony/yoshino/proprietary/lib64/libdevice_security_client.so:system/lib64/libdevice_security_client.so \
     vendor/sony/yoshino/proprietary/lib64/libidd-plat.so:system/lib64/libidd-plat.so \
+    vendor/sony/yoshino/proprietary/lib64/libimageprocessorjni.so:system/lib64/libimageprocessorjni.so \
     vendor/sony/yoshino/proprietary/lib64/vendor.semc.system.idd@1.0.so:system/lib64/vendor.semc.system.idd@1.0.so \
     vendor/sony/yoshino/proprietary/lib64/vendor.somc.hardware.miscta@1.0.so:system/lib64/vendor.somc.hardware.miscta@1.0.so \
     vendor/sony/yoshino/proprietary/lib64/vendor.somc.hardware.radio@1.0.so:system/lib64/vendor.somc.hardware.radio@1.0.so \
     vendor/sony/yoshino/proprietary/lib64/vendor.somc.hardware.security.secd@1.0.so:system/lib64/vendor.somc.hardware.security.secd@1.0.so \
     vendor/sony/yoshino/proprietary/vendor/bin/charge_service:$(TARGET_COPY_OUT_VENDOR)/bin/charge_service \
-    vendor/sony/yoshino/proprietary/vendor/bin/hw/display_cb:$(TARGET_COPY_OUT_VENDOR)/bin/hw/display_cb \
     vendor/sony/yoshino/proprietary/vendor/bin/hw/fpc_fingerprint@2.1_HIDL-service:$(TARGET_COPY_OUT_VENDOR)/bin/hw/fpc_fingerprint@2.1_HIDL-service \
     vendor/sony/yoshino/proprietary/vendor/bin/hw/qcrild:$(TARGET_COPY_OUT_VENDOR)/bin/hw/qcrild \
     vendor/sony/yoshino/proprietary/vendor/bin/hw/vendor.semc.hardware.secd@1.0-service:$(TARGET_COPY_OUT_VENDOR)/bin/hw/vendor.semc.hardware.secd@1.0-service \
@@ -301,7 +307,6 @@ PRODUCT_COPY_FILES += \
     vendor/sony/yoshino/proprietary/vendor/etc/idd.conf:$(TARGET_COPY_OUT_VENDOR)/etc/idd.conf \
     vendor/sony/yoshino/proprietary/vendor/etc/iddd.conf:$(TARGET_COPY_OUT_VENDOR)/etc/iddd.conf \
     vendor/sony/yoshino/proprietary/vendor/etc/init/fpc_fingerprint@2.1_HIDL-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/fpc_fingerprint@2.1_HIDL-service.rc \
-    vendor/sony/yoshino/proprietary/vendor/etc/init/init.display_cb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.display_cb.rc \
     vendor/sony/yoshino/proprietary/vendor/etc/init/init.keyprovd.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.keyprovd.rc \
     vendor/sony/yoshino/proprietary/vendor/etc/init/lota.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/lota.rc \
     vendor/sony/yoshino/proprietary/vendor/etc/init/mlog_qmi_service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/mlog_qmi_service.rc \
@@ -550,8 +555,18 @@ PRODUCT_COPY_FILES += \
     vendor/sony/yoshino/proprietary/vendor/lib64/libtpm.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libtpm.so
 
 PRODUCT_PACKAGES += \
+    CameraAddonPermission-release \
+    CameraCommonPermission-release \
+    CameraExtensionPermission-release \
     FidoClient \
     FidoCryptoService \
+    ImageProcessorPermission-release \
+    ArtFilterCamera-xxhdpi-release \
+    CameraCommon \
+    CameraPanorama-release \
+    SemcCameraUI-xxhdpi-release \
+    SoundPhotoCamera-xxhdpi-release \
+    TimeShiftCamera-release \
     ffu \
     tad_static \
     wait4tad_static

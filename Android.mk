@@ -19,6 +19,39 @@ LOCAL_PATH := $(call my-dir)
 ifneq ($(filter maple,$(TARGET_DEVICE)),)
 
 include $(CLEAR_VARS)
+LOCAL_MODULE := CameraAddonPermission-release
+LOCAL_MODULE_OWNER := sony
+LOCAL_SRC_FILES := proprietary/app/CameraAddonPermission-release/CameraAddonPermission-release.apk
+LOCAL_CERTIFICATE := platform
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := APPS
+LOCAL_DEX_PREOPT := false
+LOCAL_MODULE_SUFFIX := .apk
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := CameraCommonPermission-release
+LOCAL_MODULE_OWNER := sony
+LOCAL_SRC_FILES := proprietary/app/CameraCommonPermission-release/CameraCommonPermission-release.apk
+LOCAL_CERTIFICATE := platform
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := APPS
+LOCAL_DEX_PREOPT := false
+LOCAL_MODULE_SUFFIX := .apk
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := CameraExtensionPermission-release
+LOCAL_MODULE_OWNER := sony
+LOCAL_SRC_FILES := proprietary/app/CameraExtensionPermission-release/CameraExtensionPermission-release.apk
+LOCAL_CERTIFICATE := platform
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := APPS
+LOCAL_DEX_PREOPT := false
+LOCAL_MODULE_SUFFIX := .apk
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
 LOCAL_MODULE := FidoClient
 LOCAL_MODULE_OWNER := sony
 LOCAL_SRC_FILES := proprietary/app/FidoClient/FidoClient.apk
@@ -38,6 +71,89 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
 LOCAL_DEX_PREOPT := false
 LOCAL_MODULE_SUFFIX := .apk
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := ImageProcessorPermission-release
+LOCAL_MODULE_OWNER := sony
+LOCAL_SRC_FILES := proprietary/app/ImageProcessorPermission-release/ImageProcessorPermission-release.apk
+LOCAL_CERTIFICATE := platform
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := APPS
+LOCAL_DEX_PREOPT := false
+LOCAL_MODULE_SUFFIX := .apk
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := ArtFilterCamera-xxhdpi-release
+LOCAL_MODULE_OWNER := sony
+LOCAL_SRC_FILES := proprietary/priv-app/ArtFilterCamera-xxhdpi-release/ArtFilterCamera-xxhdpi-release.apk
+LOCAL_CERTIFICATE := platform
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := APPS
+LOCAL_DEX_PREOPT := false
+LOCAL_MODULE_SUFFIX := .apk
+LOCAL_PRIVILEGED_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := CameraCommon
+LOCAL_MODULE_OWNER := sony
+LOCAL_SRC_FILES := proprietary/priv-app/CameraCommon/CameraCommon.apk
+LOCAL_CERTIFICATE := platform
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := APPS
+LOCAL_DEX_PREOPT := false
+LOCAL_MODULE_SUFFIX := .apk
+LOCAL_PRIVILEGED_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := CameraPanorama-release
+LOCAL_MODULE_OWNER := sony
+LOCAL_SRC_FILES := proprietary/priv-app/CameraPanorama-release/CameraPanorama-release.apk
+LOCAL_CERTIFICATE := platform
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := APPS
+LOCAL_DEX_PREOPT := false
+LOCAL_MODULE_SUFFIX := .apk
+LOCAL_PRIVILEGED_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := SemcCameraUI-xxhdpi-release
+LOCAL_MODULE_OWNER := sony
+LOCAL_SRC_FILES := proprietary/priv-app/SemcCameraUI-xxhdpi-release/SemcCameraUI-xxhdpi-release.apk
+LOCAL_CERTIFICATE := platform
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := APPS
+LOCAL_DEX_PREOPT := false
+LOCAL_MODULE_SUFFIX := .apk
+LOCAL_PRIVILEGED_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := SoundPhotoCamera-xxhdpi-release
+LOCAL_MODULE_OWNER := sony
+LOCAL_SRC_FILES := proprietary/priv-app/SoundPhotoCamera-xxhdpi-release/SoundPhotoCamera-xxhdpi-release.apk
+LOCAL_CERTIFICATE := platform
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := APPS
+LOCAL_DEX_PREOPT := false
+LOCAL_MODULE_SUFFIX := .apk
+LOCAL_PRIVILEGED_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := TimeShiftCamera-release
+LOCAL_MODULE_OWNER := sony
+LOCAL_SRC_FILES := proprietary/priv-app/TimeShiftCamera-release/TimeShiftCamera-release.apk
+LOCAL_CERTIFICATE := platform
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := APPS
+LOCAL_DEX_PREOPT := false
+LOCAL_MODULE_SUFFIX := .apk
+LOCAL_PRIVILEGED_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
